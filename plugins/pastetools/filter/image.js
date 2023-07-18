@@ -22,6 +22,7 @@
 	 * @param {String} rtf
 	 * @member CKEDITOR.plugins.pastetools.filters
 	 */
+	/* 图片的过滤器 */
 	CKEDITOR.pasteFilters.image = function( html, editor, rtf ) {
 		var imgTags;
 
@@ -191,7 +192,7 @@
 			type: 'image/png'
 		}
 	];
-
+	/* 处理八进制富文本数据图片 */
 	function handleRtfImages( html, rtf, imgTags ) {
 		var hexImages = extractFromRtf( rtf ),
 			newSrcValues,
@@ -280,7 +281,7 @@
 		// Drawn objects are inside \shprslt and could be e.g. image alignment.
 		rtfContent = filter.removeGroups( rtfContent, '(?:(?:header|footer)[lrf]?|nonshppict|shprslt)' );
 		wholeImages = filter.getGroups( rtfContent, 'pict' );
-
+        debugger;
 		if ( !wholeImages ) {
 			return ret;
 		}
@@ -365,7 +366,7 @@
 		// in our images. So we need to get rid of it.
 		function getImageContent( image ) {
 			var content = filter.extractGroupContent( image );
-
+			debugger;
 			return content.replace( /\s/g, '' );
 		}
 	}
@@ -394,7 +395,7 @@
 
 		return 'unknown';
 	}
-
+	/* 图片的src转为base64 */
 	function createSrcWithBase64( img ) {
 		var isSupportedType = CKEDITOR.tools.array.indexOf( CKEDITOR.pasteFilters.image.supportedImageTypes, img.type ) !== -1,
 			data = img.hex;

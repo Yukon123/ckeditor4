@@ -1753,6 +1753,7 @@
 		 * @param {String} hexString Contains an input string which represents bytes, e.g. `"08A11D8ADA2B"`.
 		 * @returns {Number[]} Bytes stored in a form of Integer numbers, e.g. `[ 8, 161, 29, 138, 218, 43 ]`.
 		 */
+		/* 把八进制字符串转换成二进制数组 */
 		convertHexStringToBytes: function( hexString ) {
 			var bytesArray = [],
 				bytesArrayLength = hexString.length / 2,
@@ -1771,6 +1772,7 @@
 		 * @param {Number[]} bytesArray An array that stores 1 byte in each cell as an Integer number.
 		 * @returns {String} Base64-encoded string that represents input bytes.
 		 */
+		/* 把二进制字节流转换成base64 */
 		convertBytesToBase64: function( bytesArray ) {
 			// Bytes are `8bit` numbers, where base64 use `6bit` to store data. That's why we process 3 Bytes into 4 characters representing base64.
 			//

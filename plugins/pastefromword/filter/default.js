@@ -1818,7 +1818,7 @@
 	function remove() {
 		return false;
 	}
-
+	// 过滤word字符
 	CKEDITOR.cleanWord = CKEDITOR.pasteFilters.word = pastetools.createFilter( {
 		rules: [
 			commonFilter.rules,
