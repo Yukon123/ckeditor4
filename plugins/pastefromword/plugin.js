@@ -86,7 +86,7 @@
 				},
 				/* 从word复制的函数处理 */
 				handle: function (evt, next) {
-					debugger;
+					// debugger;
 					var data = evt.data,
 						mswordHtml = CKEDITOR.plugins.pastetools.getClipboardData(data, 'text/html'),
 						// Required in Paste from Word Image plugin (#662).
@@ -112,7 +112,7 @@
 						/* 这一步开始处理word中的图片 */
 						if (CKEDITOR.plugins.clipboard.isCustomDataTypesSupported && configInlineImages &&
 							CKEDITOR.pasteFilters.image) {
-							debugger;
+							// debugger;
 							pfwEvtData.dataValue = CKEDITOR.pasteFilters.image(pfwEvtData.dataValue, { activeFilter: { check: () => true } }, dataTransferRtf);
 						}
 

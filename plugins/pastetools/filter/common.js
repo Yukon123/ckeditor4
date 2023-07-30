@@ -940,7 +940,7 @@
 		 */
 		/* 提取组数据 */
 		extractGroupContent: function( group ) {
-			debugger;
+			// debugger;
 			var groupName = getGroupName( group ),
 				controlWordsRegex = /^\{(\\[\w-]+\s*)+/g,
 				// Sometimes content follows the last subgroup without any space.
